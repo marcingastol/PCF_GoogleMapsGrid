@@ -1,3 +1,14 @@
+npm run build
+
+$ npm install
+npm audit fix
+cd PCF_GoogleMapsGrid/
+cd GoogleMapsGrid/
+
+add eslint.config.js
+add .eslintrc.json
+
+
 # PCF - Google Maps Grid
 A PCF control to render a view of records on Google Maps using the location information (lat/long) againt each record.
 

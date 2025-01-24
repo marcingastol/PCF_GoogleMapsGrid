@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/googlemaps": "^3.37.7",
+    "@types/lodash": "^4.17.14",
     "@types/node": "^10.12.18",
     "@types/powerapps-component-framework": "^1.2.0"
   },
