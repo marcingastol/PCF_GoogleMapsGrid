@@ -8,6 +8,14 @@ cd GoogleMapsGrid/
 add eslint.config.js
 add .eslintrc.json
 
+dotnet tool install --global Microsoft.PowerApps.CLI.Tool
+
+zip:
+
+mkdir GM1
+cd GM1
+pac solution init --publisher-name N24 --publisher-prefix bc
+pac solution add-reference --path ./../..
 
 # PCF - Google Maps Grid
 A PCF control to render a view of records on Google Maps using the location information (lat/long) againt each record.

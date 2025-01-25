@@ -13,11 +13,16 @@
     <OutputPath>$(MSBuildThisFileDirectory)out\controls</OutputPath>
   </PropertyGroup>
 
-  <PropertyGroup>
+  <!--<PropertyGroup>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <!--Remove TargetFramework when this is available in 16.1-->
+    <!-Remove TargetFramework when this is available in 16.1->
     <TargetFramework>net462</TargetFramework>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  -->
+  <PropertyGroup>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkMoniker>.NETFramework,Version=$(TargetFrameworkVersion)</TargetFrameworkMoniker>
   </PropertyGroup>
 
   <ItemGroup>

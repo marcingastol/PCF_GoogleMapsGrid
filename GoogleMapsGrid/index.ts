@@ -98,7 +98,7 @@ export class GoogleMapsGrid implements ComponentFramework.StandardControl<IInput
     GoogleMapsGrid._googleMapsScriptLoaded = true;
 
     //const apiKey = this._context.parameters.GoogleMapsApiKey.raw;
-    const apiKey = "AIzaSyBl0RHjYZdVJyMFtLki71sPv5vYeW";
+    const apiKey = "AIzaSyBl0RHjYZdVJyMFtLki71sPv5vYe";
     const script = document.createElement("script");
     script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}`;
     script.async = true;
