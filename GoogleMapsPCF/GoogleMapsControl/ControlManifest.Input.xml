@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="jPCF" constructor="GoogleMapsControl" version="0.0.3" display-name-key="GoogleMapsGrid_Display_Key" description-key="GoogleMapsGrid_Desc_Key" control-type="standard">
+  <control namespace="jPCF" constructor="GoogleMapsControl" version="0.0.6" display-name-key="GoogleMapsGM1" description-key="GoogleMapsGM1_desc" control-type="standard">
     <!-- dataset node represents a set of entity records on CDS; allow more than one datasets -->
     <data-set name="mapDataSet1" display-name-key="mapDataSet_Display_Key">
       <!-- 'property-set' node represents a unique, configurable property that each record in the dataset must provide. -->
@@ -10,10 +10,10 @@
     </data-set>
     
     <property name="primaryFieldName" display-name-key="MapGrid_primaryField_Display_Key" description-key="MapGrid_primaryField_Desc_Key" of-type="SingleLine.Text" usage="input" required="true"  default-value="name"/>
-    <property name="Coordinates" display-name-key="MapGrid_Coordinates_Display_Key" description-key="MapGrid_Coordinates_Desc_Key" of-type="Multiple" usage="input" required="true" default-value="coordinates"/>
-    <property name="Latitude" display-name-key="MapGrid_latField_Display_Key" description-key="MapGrid_latField_Desc_Key" of-type="SingleLine.Text" usage="input" required="true"  default-value="address1_latitude"/>
-    <property name="Longitude" display-name-key="MapGrid_longField_Display_Key" description-key="MapGrid_longField_Desc_Key" of-type="SingleLine.Text" usage="input" required="true" default-value="address1_longitude"/>
-    <property name="GoogleMapsApiKey" display-name-key="MapGrid_googleMapsAPIKey_Display_Key" description-key="MapGrid_googleMapsAPIKey_Desc_Key" of-type="SingleLine.Text" usage="input" required="true"  />
+    <property name="Coordinates" display-name-key="Coordinates" description-key="Coordinates" of-type="Multiple" usage="input" required="true" default-value="coordinates"/>
+    <property name="Latitude" display-name-key="Latitude" description-key="Latitude" of-type="SingleLine.Text" usage="input" required="true"  default-value="address1_latitude"/>
+    <property name="Longitude" display-name-key="Longitude" description-key="Longitude" of-type="SingleLine.Text" usage="input" required="true" default-value="address1_longitude"/>
+    <property name="GoogleMapsApiKey" display-name-key="GoogleMapsApiKey" description-key="GoogleMapsApiKey" of-type="SingleLine.Text" usage="input" required="true"  />
     <resources>
       <code path="index.ts" order="1"/>
     </resources>

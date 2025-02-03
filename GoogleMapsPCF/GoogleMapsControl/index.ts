@@ -16,6 +16,7 @@ export class GoogleMapsControl implements ComponentFramework.StandardControl<IIn
   public _latitude: number = 50.2658569;  // default SF
   public _longitude: number = 19.0045351; // default SF
 
+  /*
   public locations = [
     { lat: 50.2605634, lng: 19.0384344 },
     { lat: 50.2595071, lng: 19.0329412 },
@@ -23,6 +24,7 @@ export class GoogleMapsControl implements ComponentFramework.StandardControl<IIn
     { lat: 50.2587938, lng: 19.0261177 },
     { lat: 50.2585057, lng: 19.033306 },
   ];
+  */
 
   /**
    * Empty constructor.
@@ -40,6 +42,7 @@ export class GoogleMapsControl implements ComponentFramework.StandardControl<IIn
   ): void {
     this._context = context;
     this._container = container;
+    console.log("[MAP] Parameters")
     console.log(this._longitude)
     console.log(this._latitude)
 
@@ -53,7 +56,7 @@ export class GoogleMapsControl implements ComponentFramework.StandardControl<IIn
     if (this._context.parameters.Longitude?.raw != null) {
       this._longitude = this._context.parameters.Longitude.raw;
     }
-      */
+    */
 
     // Load Google Maps script once
     this.loadGoogleMapsApi().then(() => {
@@ -100,7 +103,7 @@ export class GoogleMapsControl implements ComponentFramework.StandardControl<IIn
     GoogleMapsControl._googleMapsScriptLoaded = true;
 
     //const apiKey = this._context.parameters.GoogleMapsApiKey.raw;
-    const apiKey = "AIzaSyBl0RHjYZdVJyMFtLki71sPv5vYeW";
+    const apiKey = "";
     const script = document.createElement("script");
     script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}`;
     script.async = true;
@@ -148,23 +151,29 @@ export class GoogleMapsControl implements ComponentFramework.StandardControl<IIn
     });
     */
 
-    const coordinates = this._context.parameters.Coordinates.raw;
+    const coordinate = this._context.parameters.Coordinates.raw;
 
     const infoWindow = new google.maps.InfoWindow({
-      content: coordinates,
+      content: coordinate,
       disableAutoPan: true,
     });
 
+    const latitudeParam = this._context.parameters.Latitude.raw;
+    const longitudeParam = this._context.parameters.Longitude.raw;
+
+    const locations = [
+      { lat: latitudeParam, lng: longitudeParam }
+    ];
 
     // Add some markers to the map.
-    const markers = this.locations.map((position, i) => {
+    const markers = locations.map((position, i) => { //this.locations.map((position, i) => {
       const marker = new google.maps.Marker({
         position,
         map: map
       });
 
       marker.addListener("click", () => {
-        infoWindow.setContent(position.lat + ", " + position.lng);
+        infoWindow.setContent(coordinate + ", " + position.lat + ", " + position.lng);
         infoWindow.open(map, marker);
       });
 
